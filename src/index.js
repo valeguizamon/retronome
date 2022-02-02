@@ -3,9 +3,14 @@ import ReactDOM from 'react-dom';
 import './assets/css/index.css';
 import App from './App.js';
 import reportWebVitals from './assets/others/reportWebVitals.js';
+import * as bootstrap from 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavBar from './components/NavBar.js';
+
 
 ReactDOM.render(
   <React.StrictMode>
+    <NavBar />
     <App />
   </React.StrictMode>,
   document.getElementById('root')
