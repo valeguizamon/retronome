@@ -1,24 +1,23 @@
-import logo from './assets/images/logo.svg';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './assets/css/App.css';
+import NavBar from "./components/NavBar";
+import About from "./pages/About";
+import Home from "./pages/Home";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Proyecto E-Comerce en construcción.
-        </p>
-        <a
-          className="App-link"
-          href="https://github.com/valeguizamon"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Valentín Leguizamón Sevilla
-        </a>
-      </header>
-    </div>
+    <Router>
+      <NavBar />
+      <div className="App">
+        <header className="App-header">
+          <Routes>
+            <Route exact path="/" element={<Home text="Pagina de Inicio" />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </header>
+      </div>
+    </Router>
   );
 }
 
