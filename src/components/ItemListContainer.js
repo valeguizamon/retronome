@@ -1,18 +1,14 @@
-import ItemCount from "./itemCount";
+import ItemCount from "./ItemCount";
 
-function ItemListContainer(props) {
+const ItemListContainer = ({greeting}) => {
     
-    const onAdd = (e, count) =>{
-        e.preventDefault();
-        console.log("La cantidad de items agregados al carrito es de: " + JSON.stringify(count));
-    }
-
     return (
-        <div className="container bg-light text-dark">
-            <b>{props.greeting}</b>
-            <ItemCount stock={10} valor={1} onAdd={onAdd}/>
+        <div className="container bg-secondary">
+            <h3 className="text-center">{greeting}</h3>
+            <ItemCount stock={20} value={1}/>
+
         </div>
     );
 }
-
+ 
 export default ItemListContainer;

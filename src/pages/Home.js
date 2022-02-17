@@ -1,19 +1,17 @@
 import ItemListContainer from "../components/ItemListContainer";
 
-function Home(props) {
-    return (
-        <div class="container">
-            <div class="jumbotron">
-                <h1 class="display-4">{props.text}</h1>
-                <p>El titulo "{props.text}" es enviado como parametro desde App.js y renderizado desde Home.js</p>
-                <hr class="my-4" />
-                <p class="lead">
-                    <ItemListContainer greeting="Saludos, este mensaje fue enviado como parametro desde el componente Home.js y renderizado en ItemListContainer.js"/>
-                </p>
-            </div>
+const Home = () => {
+    
+    return ( 
+        <div className="container jumbotron mt-3">
+            <h1 className="display-4">retronome</h1>
+            <p className="lead">Aqui podras conseguir tus juegos y consolas retro</p>
+            <p>Esperamos que encuentres lo que estas buscando</p>
+            <hr className="my-4" />
+            <ItemListContainer greeting="Lista de Proudctos"/>
         </div>
     );
-}
 
-export default Home
-    ;
+}
+ 
+export default Home;
