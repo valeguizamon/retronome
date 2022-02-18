@@ -1,0 +1,27 @@
+[
+    {
+        "id": "A",
+        "title": "Sega Genesis",
+        "pictureUrl": "https://picsum.photos/200/100",
+        "price": 700
+    },
+    {
+        "id": "B",
+        "title": "Super Nintendo",
+        "pictureUrl": "https://picsum.photos/200/100",
+        "price": 750
+    },
+    {
+        "id": "C",
+        "title": "Batocera - Emulador de Consolas",
+        "pictureUrl": "https://picsum.photos/200/100",
+        "price": 1500
+    },
+    {
+        "id": "D",
+        "title": "9999 on 1 - Consola Portatil",
+        "pictureUrl": "https://picsum.photos/200/100",
+        "price": 350
+    }
+    
+] 
