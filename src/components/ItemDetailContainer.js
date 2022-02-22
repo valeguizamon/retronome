@@ -1,0 +1,47 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
+import datos from "../assets/data/productos.json";
+import ItemDetail from "./ItemDetail";
+
+function ItemDetailContainer() {
+
+    let { id } = useParams();
+
+
+
+    const [product, setProduct] = useState({});
+
+
+
+    useEffect(() => {
+
+        console.log(id);
+
+        const getOneProduct = (id) => {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => resolve(datos.find(product => product.id == id), 2000))
+            })
+        }
+
+
+
+
+        getOneProduct(id)
+
+            .then(resp => {
+                setProduct(resp)
+                console.log(resp)
+            })
+
+            .catch(error => console.error(error));
+    }, [id]);
+
+    return (
+
+        <ItemDetail product={product} />
+
+    );
+}
+
+export default ItemDetailContainer;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import datos from "../assets/data/productos.json"
+import datos from "../assets/data/productos.json";
 
 import ItemList from "./ItemList";
 
@@ -20,7 +20,6 @@ const ItemListContainer = ({ greeting }) => {
         <div className="">
             <h3 className="text-center display-4">{greeting}</h3>
             <ItemList productos={productos}/>
-            {console.log(productos)}
         </div>
     );
 }
