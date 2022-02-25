@@ -1,7 +1,12 @@
 # retronome | E-Commerce
 
-_Proyecto realizado para poner en practica y hacer entregas del curso de React JS de CODERHOUSE_
-_De momento falta solucionar algunas cuestiones de estilos, así como reemplazar los placeholder de imagenes de los Items, en proximos commits sera resuelto_
+_Proyecto realizado para poner en practica y hacer entregas del curso de React JS de CODERHOUSE._
+
+_Siempre me apasionaron los videojuegos, por eso escogi como tematica para mi página los videojuegos y consolas retro._
+
+_Busque mantener el orden de los archivos dividiendolos en carpetas, como: componentes, assets, con sus respectivas subdivisiones_
+
+_De momento falta solucionar algunas cuestiones de estilos, así como reemplazar los placeholder de imagenes de los Items, en proximos commits sera resuelto._
 
 
 ### Comandos 📋
