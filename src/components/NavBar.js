@@ -24,9 +24,8 @@ const NavBar = () => {
                             Categories
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a className="dropdown-item" href="#">Games</a></li>
-                            <li><a className="dropdown-item" href="#">Consoles</a></li>
-                            <li><a className="dropdown-item" href="#">Misc</a></li>
+                            <li><a className="dropdown-item" href="/category/1">Games</a></li>
+                            <li><a className="dropdown-item" href="/category/2">Consoles</a></li>
                         </ul>
                     </li>
                 </ul>

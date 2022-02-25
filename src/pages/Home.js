@@ -4,10 +4,10 @@ const Home = () => {
     
     return ( 
         <div className="container jumbotron mt-3">
-            <ItemListContainer greeting="Lista de Proudctos"/>
+            <ItemListContainer />
+            
         </div>
     );
-
 }
  
 export default Home;

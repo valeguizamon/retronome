@@ -1,7 +1,7 @@
-import ItemCount from "./itemCount";
+import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ product }) => {
-
+console.log(product);
     return (
         <div className="container mt-5" id="product-detail">
             <div className="row">
