@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ product }) => {
@@ -6,7 +7,6 @@ const ItemDetail = ({ product }) => {
     const [carrito, setCarrito] = useState({});
 
     const onAdd = (e, count) => {
-        e.preventDefault();
         console.log("Desde el ItemDetail")
         console.log("La cantidad de items agregados al carrito es de: " + count);
     
@@ -21,13 +21,13 @@ const ItemDetail = ({ product }) => {
                     <img src={product.pictureUrl} alt="" className="img-fluid" />
                 </div>
                 <div className="col-12 col-md-6 col-lg-8">
-                    <div className="product-info">
+                    <div className="product-info d-grid gap-2">
                         <h1>{product.title}</h1>
                         <h3>${product.price}</h3>
                         <hr />
                         <p>{product.description}</p>
                         <ItemCount stock={20} value={1} onAdd={onAdd}/>
-                        <button onClick={onAdd}>Terminar Compra</button>
+                        <Link className="btn btn-primary btn-block" to={"/cart"}>Terminar Compra</Link>
                     </div>
                 </div>
             </div>
