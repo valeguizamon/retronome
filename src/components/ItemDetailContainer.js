@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import datos from "../assets/data/productos.json";
 import ItemDetail from "./ItemDetail";
 
-function ItemDetailContainer() {
+const ItemDetailContainer = () => {
 
     let { id } = useParams();
     const [product, setProduct] = useState({});
@@ -18,7 +18,6 @@ function ItemDetailContainer() {
         getOneProduct(id)
             .then(resp => {
                 setProduct(resp);
-                console.log(resp);
             })
             .catch(error => console.error(error));
     }, [id]);

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
 
 const Item = ({ prod }) => {
-    
+
     return (
         <div className="col-sm-3 d-flex">
             <div className="card m-3 flex-fill">
@@ -10,7 +10,6 @@ const Item = ({ prod }) => {
                 <div className="card-body d-grid">
                     <h6 className="card-title">{prod.title}</h6>
                     <p className="float-end">$ {prod.price}</p>
-                    <ItemCount stock={20} value={1} />
                     <Link className="btn btn-secondary" to={`/detail/${prod.id}`}>View details</Link>
                 </div>
             </div>

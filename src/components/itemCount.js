@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ItemCount = ({ stock, value }) => {
+const ItemCount = ({ stock, value, onAdd }) => {
 
     const [count, setCount] = useState(value);
 
@@ -10,11 +10,6 @@ const ItemCount = ({ stock, value }) => {
 
     const restar = () => {
         setCount((count > value) ? count - 1 : value);
-    }
-
-    const onAdd = (e, count) => {
-        e.preventDefault();
-        console.log("La cantidad de items agregados al carrito es de: " + count);
     }
 
     return (

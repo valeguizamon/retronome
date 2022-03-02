@@ -1,7 +1,19 @@
+import { useState } from "react";
 import ItemCount from "./ItemCount";
 
 const ItemDetail = ({ product }) => {
-console.log(product);
+
+    const [carrito, setCarrito] = useState({});
+
+    const onAdd = (e, count) => {
+        e.preventDefault();
+        console.log("Desde el ItemDetail")
+        console.log("La cantidad de items agregados al carrito es de: " + count);
+    
+        setCarrito(count * product.price);
+        console.log("El total del carrito es de: $" + parseInt(carrito));
+    }
+    
     return (
         <div className="container mt-5" id="product-detail">
             <div className="row">
@@ -14,7 +26,8 @@ console.log(product);
                         <h3>${product.price}</h3>
                         <hr />
                         <p>{product.description}</p>
-                        <ItemCount stock={20} value={1} />
+                        <ItemCount stock={20} value={1} onAdd={onAdd}/>
+                        <button onClick={onAdd}>Terminar Compra</button>
                     </div>
                 </div>
             </div>
