@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import ItemCount from './ItemCount';
+import ItemCount from './itemCount';
 
 const Item = ({ prod }) => {
 
