@@ -1,54 +1,63 @@
-import { Link } from 'react-router-dom';
-import { useCartContext } from '../../context/cart-context/CartContextProvider';
+import { Link } from "react-router-dom";
+import { useCartContext } from "../context/CartContext";
 
 const Cart = () => {
 
-    const { carrito, removefromCart } = useCartContext();
+    const { carrito, removeFromCart, clearCart } = useCartContext();
+    console.log(carrito);
 
-    let tr = carrito.map((elemento, index) => {
+    const tabla = carrito.map((asd, index) => {
+
         return (
-            <tr key={index} className="cart-item-table-row col-12 ">
-                <td className="col-md-1 td-text"> <button className="btn" onClick={() => { removefromCart(elemento.item) }}>Borrar elemento</button> </td>
-                <td className="col-md-8">
-                    <img className="cart-item-img" src={elemento.item.pictureUrl} alt="" />
-                    <Link to={'/item/' + elemento.item.id} className="link-item"> {elemento.item.title} </Link>
-                </td>
-                <td className="col-md-1 td-text"><span>{elemento.quantity}</span></td>
-                <td className="col-md-1 td-text"><span>${elemento.item.price}</span></td>
-                <td className="col-md-1 td-text"><span>${elemento.item.price * elemento.quantity}</span></td>
+            <tr key={index}>
+                <td>{asd.producto.title}</td>
+                <td>{asd.producto.price}</td>
+                <td>{asd.cantidad}</td>
+                <td>{asd.producto.price * asd.cantidad}</td>
+                <td><button className="btn btn-danger" onClick={(e) => removeFromCart(e, asd.producto.id)}>Eliminar</button></td>
             </tr>
-        );
+        )
     });
 
-    return (
-        <div>
-            <div className="container my-5 d-flex">
-                soy el cart
-                <div className="cart-table col-md-8">
-                    <table className="table">
-                        <thead className="thead-dark">
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">Producto</th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">Subtotal</th>
-                                <th scope="col">Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                tr
-                            }
-                        </tbody>
-                    </table>
-                </div>
-                <div className="cart-checkout col-md-4">
-                    CHECKOUT..(WORKING)
-                </div>
+    const EmptyCart = () => {
+        return (
+            <div className="jumbotron">
+                <h1 className="display-4">Su carrito esta vacio! :'(</h1>
+                <p className="lead">Desea ir al Inicio a ver productos? </p>
+                <Link className="btn btn-primary btn-lg" to="/home" role="button"> Inicio </Link>
             </div>
-        </div>
+        );
+    }
 
-    )
+    return (
+        <div className="container mt-5">
+            {
+                carrito.length > 0 &&
+                <table className="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Titulo</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tabla}
+                    </tbody>
+                    <tfoot> 
+                        <tr>
+                        <td colSpan="4"></td>
+                        <td>Total - AR$
+                        {carrito.reduce((acum, item)=> acum + (item.cantidad * item.producto.price) ,0) }
+                        </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            }
+            {carrito.length === 0 && <EmptyCart />}
+        </div>
+    );
 }
 
 export default Cart;

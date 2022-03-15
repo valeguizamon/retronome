@@ -18,7 +18,6 @@ const CartContextProvider = ({ children }) => {
                 }
                 return elemento;
             }))
-            console.log(carrito);
         } else {
             console.log("No existe en el carrito");
             setCarrito([...carrito, {producto, cantidad: count}]);
@@ -27,7 +26,8 @@ const CartContextProvider = ({ children }) => {
 
     }
 
-    const removeFromCart = (id) => {
+    const removeFromCart = (e, id) => {
+        e.preventDefault();
         setCarrito(carrito.filter(elemento => elemento.producto.id !== id));
     }
 

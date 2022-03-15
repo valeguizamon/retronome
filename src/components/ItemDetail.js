@@ -30,7 +30,7 @@ const ItemDetail = ({ product }) => {
                         <hr />
                         <p>{product.description}</p>
                         <ItemCount stock={20} value={1} onAdd={onAdd}/>
-                        <Link className="btn btn-primary btn-block" to={"/cart"}>Terminar Compra</Link>
+                        {/* <Link className="btn btn-primary btn-block" to={"/cart"}>Terminar Compra</Link> */}
                     </div>
                 </div>
             </div>
