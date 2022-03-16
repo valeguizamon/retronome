@@ -1,3 +1,4 @@
+import { getDoc, getFirestore, doc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -10,10 +11,15 @@ const ItemDetailContainer = () => {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        const getOneProduct = (id) => {
-            return new Promise((resolve, reject) => {
-                setTimeout(() => resolve(datos.find(product => product.id === +id), 2000))
-            })
+        const getOneProduct = async(id) => {
+            try{
+                const item = doc(getFirestore(), "items", id);
+                const resp = await getDoc(item);
+                return resp.data();
+            } catch(error) {
+                console.warn("error", error);
+            }
+            
         }
         getOneProduct(id)
             .then(resp => {

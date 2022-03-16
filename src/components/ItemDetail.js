@@ -29,7 +29,7 @@ const ItemDetail = ({ product }) => {
                         <h3>${product.price}</h3>
                         <hr />
                         <p>{product.description}</p>
-                        <ItemCount stock={20} value={1} onAdd={onAdd}/>
+                        <ItemCount stock={product.stock} value={1} onAdd={onAdd}/>
                         {/* <Link className="btn btn-primary btn-block" to={"/cart"}>Terminar Compra</Link> */}
                     </div>
                 </div>
