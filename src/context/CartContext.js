@@ -11,6 +11,7 @@ const CartContextProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([]);
 
     const addToCart = (producto, count) => {
+        console.log("producto", producto)
         if(isOnCart(producto.id) !== undefined){
             setCarrito(carrito.map(elemento => {
                 if(producto.id === elemento.producto.id){
