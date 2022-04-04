@@ -36,7 +36,7 @@ const Cart = () => {
             let products = await getDocs(queryUpdateStock)
             products.docs.forEach(res => {
                 batch.update(res.ref, {
-                    stock: res.data().stock - cart.find(cartItem => cartItem.product.id === res.id).cantidad
+                    stock: res.data().stock - cart.find(cartItem => cartItem.product.id === res.id).quantity
                 })
             })
 
