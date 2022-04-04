@@ -1,4 +1,5 @@
 const Error404 = () => {
+    
     return (
         <div className="container jumbotron mt-3">
             <h1 className="display-4">error 404</h1>
@@ -9,6 +10,7 @@ const Error404 = () => {
             </p>
         </div>
       );
+      
 }
  
 export default Error404;

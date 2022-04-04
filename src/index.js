@@ -4,9 +4,8 @@ import './assets/css/index.css';
 import App from './App';
 
 //Importacion de JS y CSS de Bootstrap
-import * as bootstrap from 'bootstrap';
+import "bootstrap/dist/js/bootstrap.bundle";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,4 +13,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-

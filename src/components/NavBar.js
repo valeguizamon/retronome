@@ -16,43 +16,22 @@ const NavBar = () => {
                         retronome
                     </Link>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/">Home</Link>
+                        <Link className="nav-link" to="/">Inicio</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/about">About</Link>
+                        <Link className="nav-link" to="/about">Sobre mí</Link>
                     </li>
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Categories
-                        </a>
+                        <p className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categorias
+                        </p>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><Link className="dropdown-item" to="/category/1">Games</Link></li>
-                            <li><Link className="dropdown-item" to="/category/2">Consoles</Link></li>
+                            <li><Link className="dropdown-item" to="/category/1">Juegos</Link></li>
+                            <li><Link className="dropdown-item" to="/category/2">Consolas</Link></li>
                         </ul>
                     </li>
-                </ul>
-                <ul className="navbar-nav d-flex float-right">
-                    <li className="nav-item me-2">
+                    <li className="nav-item">
                         <CartWidget />
-                    </li>
-                    <li className="nav-item me-2">
-                        <div className="input-group">
-                            <input type="text" className="form-control" placeholder="Search" aria-describedby="button-addon2" />
-                            <button className="btn btn-primary" type="button" id="button-addon2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
-                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </li>
-                    <li>
-                        <button type="button" className="btn btn-success">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-circle me-2" viewBox="0 0 16 16">
-                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
-                                <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
-                            </svg>
-                            Log In
-                        </button>
                     </li>
                 </ul>
             </div>

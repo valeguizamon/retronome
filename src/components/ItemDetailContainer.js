@@ -2,7 +2,6 @@ import { getDoc, getFirestore, doc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-//import datos from "../assets/data/productos.json";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
@@ -17,7 +16,7 @@ const ItemDetailContainer = () => {
                 const resp = await getDoc(item);
                 return {id:resp.id, ...resp.data()};
             } catch(error) {
-                console.warn("error", error);
+                console.error("error", error);
             }
             
         }

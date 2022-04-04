@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-//import datos from "../assets/data/productos.json";
-
 import { collection, getDocs, query, where } from "firebase/firestore";
 import db from "../services/firebase";
 
@@ -12,42 +10,15 @@ const ItemListContainer = () => {
 
     const { idCategory } = useParams();
 
-    const [titulo, setTitulo] = useState([])
-    const [productos, setProductos] = useState([]);
-
-    // useEffect(() => {
-    //     if (idCategory) {
-    //         const getByCategory = new Promise((resolve, reject) => {
-    //             setTimeout(resolve(datos.filter((product) => {
-    //                 return product.idCategory === +idCategory
-    //             })), 2000)
-    //         })
-    //         getByCategory
-    //             .then(res => setProductos(res))
-    //             .catch(err => console.error(err));
-
-    //         if(+idCategory === 1){
-    //             setTitulo("Juegos");
-    //         } else {
-    //             setTitulo("Consolas")
-    //         }
-
-    //     } else {
-    //         const getAll = new Promise((resolve, reject) => setTimeout(resolve(datos), 2000));
-    //         getAll
-    //             .then(res => setProductos(res))
-    //             .catch(err => console.error(err));
-
-    //         setTitulo("Todos nuestros productos")
-    //     }
-    // }, [idCategory]);
+    const [title, setTitle] = useState([])
+    const [products, setProducts] = useState([]);
 
     const getData = async () => {
         try {
             const itemsCollection = collection(db, "items");
             const col = await getDocs(itemsCollection);
             const result = col.docs.map((doc) => doc = { id: doc.id, ...doc.data() });
-            setProductos(result);
+            setProducts(result);
         } catch (error) {
             console.warn("error: " + error);
         }
@@ -58,7 +29,6 @@ const ItemListContainer = () => {
             const itemsCollection = collection(db,"items");
             const q = query(itemsCollection, where("idCategory", "==", idCat));
             const col = await getDocs(q);
-            console.log("ASD",col.docs.map((doc)=> doc = {id: doc.id, ...doc.data()}));
             return col.docs.map((doc)=> doc = {id: doc.id, ...doc.data()}); 
         } catch(error){
             console.warn(error);
@@ -69,18 +39,17 @@ const ItemListContainer = () => {
         if (idCategory) {
             getByCategory(+idCategory)
             
-                .then(res => {setProductos(res)
-                    console.log(res)})
+                .then(res => {setProducts(res)})
                 .catch(err => console.error(err));
 
             if (+idCategory === 1) {
-                setTitulo("Juegos");
+                setTitle("Juegos");
             } else {
-                setTitulo("Consolas")
+                setTitle("Consolas")
             }
         } else {
             getData()
-            setTitulo("Todos nuestros productos")
+            setTitle("Todos nuestros productos")
         }
 
     }, [idCategory]);
@@ -88,8 +57,8 @@ const ItemListContainer = () => {
 
     return (
         <div className="">
-            <h3 className="text-center display-4">{titulo}</h3>
-            <ItemList productos={productos} />
+            <h3 className="text-center">{title}</h3>
+            <ItemList products={products} />
         </div>
     );
 }

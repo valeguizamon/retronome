@@ -4,9 +4,7 @@ _Proyecto realizado para poner en practica y hacer entregas del curso de React J
 
 _Siempre me apasionaron los videojuegos, por eso escogi como tematica para mi página los videojuegos y consolas retro._
 
-_Busque mantener el orden de los archivos dividiendolos en carpetas, como: componentes, assets, con sus respectivas subdivisiones_
-
-_De momento falta solucionar algunas cuestiones de estilos, así como reemplazar los placeholder de imagenes de los Items, en proximos commits sera resuelto._
+_Busque mantener el orden de los archivos subdividiendolos en carpetas, tales como: componentes, assets, con sus respectivas subdivisiones en ellas._
 
 
 ### Comandos 📋
@@ -44,7 +42,7 @@ npm i react-router-dom
 
 * [React](https://es.reactjs.org/)
 * [Bootstrap](https://getbootstrap.com/)
-* [Lorem Picsum](https://picsum.photos/)
+* [Firebase](https://firebase.google.com)
 
 
 ## Autor ✒️
